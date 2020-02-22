@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Задание 2.5</title>
+</head>
+<body>
+<script>
+    'use strict';
+    /**Функция складывает параметры "a" и "b".
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function add(a, b) {
+        return a + b;
+    }
+
+    /**Функция вычитает из параметра "а" параметр "b".
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    /**Функция делит параметр "a" на параметр "b".
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function divide(a, b) {
+        return a / b;
+    }
+
+    /**Функция умножает параметр "a" на параметр "b" .
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    /**
+     * Функция получает 2 параметра ( a и b) и выполняет с ними заданное  математическое действие (+,-,* или /)
+     * @param {number} a
+     * @param {number} b
+     * @param {string} ops может быть "+", "-", "/", "*".
+     * @throws {Error} если передана не предусмотренная операция, то будет выдано сообщение об ошибке.
+     * @returns {number} результат математического действия
+     */
+    function mathOps( a, b, ops) {
+        switch (ops) {
+            case "+":
+                return add(a, b);
+            case "-":
+                return subtract(a, b);
+            case "*":
+                return multiply(a, b);
+            case "/":
+                return divide(a, b);
+            default:
+                throw new Error("Операции " + ops + " не существует!");
+        }
+    }
+
+
+    /*let a=+prompt("Введите переменную А");
+    let b=+prompt("Введите переменную В");
+    let ops= prompt("Введите оператор математического действия");
+   alert(mathOps()) ;*/
+    console.log(mathOps(4, 2, "+"));
+    console.log(mathOps(4, 2, "-"));
+    console.log(mathOps(4, 2, "/"));
+    console.log(mathOps(4, 2, "*"));
+    console.log(mathOps(4, 2, "Ж"));
+</script>
+</body>
+</html>
